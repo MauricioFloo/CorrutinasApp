@@ -48,15 +48,26 @@ fun CoroutinesApp(viewModel: MainViewModel = MainViewModel(), modifier: Modifier
 
         Text(text= viewModel.resultState)
 
+        Spacer (modifier = modifier.height(30.dp))
+
         Text(text = "${viewModel.countTime}[s]" )
 
         Spacer(modifier = modifier.height(30.dp))
 
+        Text(text = "${viewModel.countTimetwo}[s]" )
+
+        Spacer(modifier = modifier.height(30.dp))
+
         Button(onClick = {
-viewModel.fetchData()
+           viewModel.fetchData()
         }) {
             Text(text= stringResource(R.string.realizar_consulta))
+        }
 
+        Spacer(modifier = modifier.height(30.dp))
+
+        Button(onClick = { viewModel.closeCounters()}) {
+            Text(text = "Cancelar contadores")
         }
 
 
